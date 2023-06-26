@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Testes API - EBAC
 ### Exercício para os alunos de Qualidade de software da EBAC 
 
@@ -61,3 +62,6 @@ Qualidade de software
 
 
 
+=======
+# Teste_ServeRest_Aula14
+>>>>>>> 37d7b3be238711857c15d634f3299e19bde057b8
