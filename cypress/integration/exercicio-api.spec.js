@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import { internet } from "faker";
 
 describe("Testes da Funcionalidade Usuários", () => {
   it("Deve validar contrato de usuários", () => {
@@ -12,17 +13,13 @@ describe("Testes da Funcionalidade Usuários", () => {
   it("Deve cadastrar um usuário com sucesso", () => {
     const novoEmail = internet.email();
 
-    cy.request({
-      method: "POST",
-      url: "/usuarios",
-      body: {
-        nome: "Matheus Sena Aguiar",
-        email: novoEmail,
-        password: "teste",
-        administrador: "true",
-      },
-    }).then((response) => {
-      expect(response.status).to.equal(201);
+    cy.cadastrarUsuario({
+      nome: "Matheus Sena Aguiar",
+      email: novoEmail,
+      password: "teste",
+      administrador: "true",
+    }).then((usuarioId) => {
+      Cypress.env("usuarioId", usuarioId);
     });
   });
 
@@ -44,20 +41,25 @@ describe("Testes da Funcionalidade Usuários", () => {
   });
 
   it("Deve editar um usuário previamente cadastrado", () => {
+    const usuarioId = Cypress.env("usuarioId");
+    const novoEmail = internet.email();
+
     const updatedUserData = {
       nome: "Matheus Sena Aguiar",
-      email: "1111122000@outlook.com",
+      email: novoEmail,
       password: "teste",
       administrador: "true",
     };
 
-    cy.request("PUT", `/usuarios/put_usuarios___id_`, updatedUserData)
+    cy.request("PUT", `/usuarios/${usuarioId}`, updatedUserData)
       .its("status")
-      .should("equal", 201);
+      .should("equal", 200);
   });
 
   it("Deve deletar um usuário previamente cadastrado", () => {
-    cy.request("DELETE", `/usuarios/delete_usuarios__id_`)
+    const usuarioId = Cypress.env("usuarioId");
+
+    cy.request("DELETE", `/usuarios/${usuarioId}`)
       .its("status")
       .should("equal", 200);
   });
