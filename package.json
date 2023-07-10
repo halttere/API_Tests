@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.2.0"
+    "cypress": "^4.12.1"
   },
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
@@ -22,7 +22,7 @@
     "faker": "^5.5.3",
     "joi": "^17.4.2",
     "make-dir": "^4.0.0",
-    "mocha": "^9.1.0",
+    "mocha": "^9.2.2",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^6.2.0",
