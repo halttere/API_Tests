@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-10T16:58:45.172Z",
+    "end": "2023-07-10T16:58:47.361Z",
+    "duration": 2189,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5347265e-dc04-4024-bf75-fef051be8b51",
+      "title": "",
+      "fullFile": "cypress\\integration\\exercicio-api.spec.js",
+      "file": "cypress\\integration\\exercicio-api.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ae30554-c09f-411e-ae0f-683b12ca07fb",
+          "title": "Testes da Funcionalidade Usuários",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve validar contrato de usuários",
+              "fullTitle": "Testes da Funcionalidade Usuários Deve validar contrato de usuários",
+              "timedOut": null,
+              "duration": 756,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", \"/usuarios\").its(\"status\").should(\"equal\", 200);",
+              "err": {},
+              "uuid": "54efd16d-07d9-4cf9-8c39-e685e8daa986",
+              "parentUUID": "8ae30554-c09f-411e-ae0f-683b12ca07fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve listar usuários cadastrados",
+              "fullTitle": "Testes da Funcionalidade Usuários Deve listar usuários cadastrados",
+              "timedOut": null,
+              "duration": 120,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", \"/usuarios\").its(\"status\").should(\"equal\", 200);",
+              "err": {},
+              "uuid": "935a33ef-8dc4-4402-a5e4-2eabf13fb5ee",
+              "parentUUID": "8ae30554-c09f-411e-ae0f-683b12ca07fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve cadastrar um usuário com sucesso",
+              "fullTitle": "Testes da Funcionalidade Usuários Deve cadastrar um usuário com sucesso",
+              "timedOut": null,
+              "duration": 694,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var novoEmail = _faker.internet.email();\ncy.cadastrarUsuario({\n  nome: \"Matheus Sena Aguiar\",\n  email: novoEmail,\n  password: \"teste\",\n  administrador: \"true\"\n}).then(function (usuarioId) {\n  Cypress.env(\"usuarioId\", usuarioId);\n});",
+              "err": {},
+              "uuid": "51ba8b02-f2a8-4855-947b-a8886593ce81",
+              "parentUUID": "8ae30554-c09f-411e-ae0f-683b12ca07fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve validar um usuário com email inválido",
+              "fullTitle": "Testes da Funcionalidade Usuários Deve validar um usuário com email inválido",
+              "timedOut": null,
+              "duration": 86,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var invalidEmail = \"invalidemail\";\ncy.request({\n  method: \"POST\",\n  url: \"/usuarios\",\n  failOnStatusCode: false,\n  body: {\n    name: \"Matheus Neves dos Santos\",\n    email: invalidEmail,\n    password: \"senha123\"\n  }\n}).then(function (response) {\n  expect(response.status).to.equal(400);\n});",
+              "err": {},
+              "uuid": "a6e9c08d-5ccc-4374-8791-31b21f28e76e",
+              "parentUUID": "8ae30554-c09f-411e-ae0f-683b12ca07fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve editar um usuário previamente cadastrado",
+              "fullTitle": "Testes da Funcionalidade Usuários Deve editar um usuário previamente cadastrado",
+              "timedOut": null,
+              "duration": 143,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var usuarioId = Cypress.env(\"usuarioId\");\nvar novoEmail = _faker.internet.email();\nvar updatedUserData = {\n  nome: \"Matheus Sena Aguiar\",\n  email: novoEmail,\n  password: \"teste\",\n  administrador: \"true\"\n};\ncy.request(\"PUT\", \"/usuarios/\".concat(usuarioId), updatedUserData).its(\"status\").should(\"equal\", 200);",
+              "err": {},
+              "uuid": "e7ac23a0-7b53-4341-b9e1-b858478c69e6",
+              "parentUUID": "8ae30554-c09f-411e-ae0f-683b12ca07fb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve deletar um usuário previamente cadastrado",
+              "fullTitle": "Testes da Funcionalidade Usuários Deve deletar um usuário previamente cadastrado",
+              "timedOut": null,
+              "duration": 102,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var usuarioId = Cypress.env(\"usuarioId\");\ncy.request(\"DELETE\", \"/usuarios/\".concat(usuarioId)).its(\"status\").should(\"equal\", 200);",
+              "err": {},
+              "uuid": "cfdd45fc-9f1c-435f-b65c-ccaa52f27614",
+              "parentUUID": "8ae30554-c09f-411e-ae0f-683b12ca07fb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "54efd16d-07d9-4cf9-8c39-e685e8daa986",
+            "935a33ef-8dc4-4402-a5e4-2eabf13fb5ee",
+            "51ba8b02-f2a8-4855-947b-a8886593ce81",
+            "a6e9c08d-5ccc-4374-8791-31b21f28e76e",
+            "e7ac23a0-7b53-4341-b9e1-b858478c69e6",
+            "cfdd45fc-9f1c-435f-b65c-ccaa52f27614"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1901,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
