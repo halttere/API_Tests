@@ -65,7 +65,7 @@ describe("Testes da Funcionalidade Produtos", () => {
         url: `produtos/${id}`,
         headers: { authorization: token },
         body: {
-          nome: "Produto Editado 6852458",
+          nome: "Produto Editado 54874521",
           preco: 100,
           descricao: "Produto editado",
           quantidade: 100,
