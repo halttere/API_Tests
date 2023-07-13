@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-13T14:27:48.508Z",
+    "end": "2023-07-13T14:27:50.372Z",
+    "duration": 1864,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "19442a9d-3db9-4242-a64f-9d7f8b03f8a3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e3fc7973-b4ed-4764-b9d7-899ac0f441c9",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve fazer login com sucesso",
+              "fullTitle": "Login Deve fazer login com sucesso",
+              "timedOut": null,
+              "duration": 1337,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: \"POST\",\n  url: \"login\",\n  body: {\n    email: \"matheussena@outlook.com\",\n    password: \"teste\"\n  }\n}).then(response => {\n  expect(response.status).to.equal(200);\n  expect(response.body.message).to.equal(\"Login realizado com sucesso\");\n  cy.log(response.body.authorization);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:3000/login\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3000/login\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed trying to load:\n\nhttp://localhost:3000/login\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:3000\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3000/login\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:149392:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:18744:23)\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:13883:37)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:18744:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:16679:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:16736:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:16781:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:16857:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:13451:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:13444:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:13460:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:13330:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/login.cy.js:5:7)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ECONNREFUSED 127.0.0.1:3000\n      at new r (<embedded>:1751:354923)\n      at ee.callback (<embedded>:1751:360924)\n      at e.callback.s.callback [as _callback] (<embedded>:1751:360370)\n      at s._callback.s.callback.s.callback (<embedded>:1969:92304)\n      at ee.emit (node:events:527:28)\n      at ee.onRequestError (<embedded>:1969:101246)\n      at ClientRequest.emit (node:events:539:35)\n      at Socket.socketErrorListener (node:_http_client:454:9)\n      at Socket.emit (node:events:527:28)\n      at emitErrorNT (node:internal/streams/destroy:157:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:122:3)\n      at process.processTicksAndRejections (node:internal/process/task_queues:83:21)",
+                "diff": null
+              },
+              "uuid": "f8fbca18-dd28-44c9-ad40-5cf25498cac9",
+              "parentUUID": "e3fc7973-b4ed-4764-b9d7-899ac0f441c9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f8fbca18-dd28-44c9-ad40-5cf25498cac9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1337,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
